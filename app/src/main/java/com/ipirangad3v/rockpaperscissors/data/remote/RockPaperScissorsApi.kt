@@ -7,9 +7,9 @@ import retrofit2.http.GET
 
 interface RockPaperScissorsApi {
 
-    @GET("books")
+    @GET("medieval_name")
     fun getName(): Call<NameResponse>
 
-    @GET("medieval_name")
+    @GET("rock_paper_scissors")
     fun getPlay(): Call<GameResponse>
 }
