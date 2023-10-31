@@ -3,6 +3,8 @@ package com.ipirangad3v.rockpaperscissors.ui.screens.game
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ipirangad3v.rockpaperscissors.data.local.datastore.PreferencesDataStore
+import com.ipirangad3v.rockpaperscissors.data.local.ranking.RankingDatabase
+import com.ipirangad3v.rockpaperscissors.data.local.ranking.entities.MatchEntity
 import com.ipirangad3v.rockpaperscissors.domain.models.GameState
 import com.ipirangad3v.rockpaperscissors.domain.models.Movement
 import com.ipirangad3v.rockpaperscissors.domain.repository.GameRepository
@@ -20,6 +22,7 @@ import com.ipirangad3v.rockpaperscissors.domain.models.RoundResult
 class GameViewModel @Inject constructor(
     private val gameRepository: GameRepository,
     private val dataStore: PreferencesDataStore,
+    private val rankingDatabase: RankingDatabase,
 ) : ViewModel() {
 
     private val _screenState = MutableStateFlow(GameScreenState()) // private mutable state flow
@@ -88,6 +91,13 @@ class GameViewModel @Inject constructor(
         _screenState.value = _screenState.value.copy(
             loading = false,
             currentGameState = GameState.ENDED
+        )
+        rankingDatabase.rankingDao().insertMatch(
+            MatchEntity(
+                cpu = _screenState.value.currentFoeName,
+                player = _screenState.value.currentUserName,
+                winner = _screenState.value.finalResult!!,
+            )
         )
     }
 

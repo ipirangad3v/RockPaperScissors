@@ -1,4 +1,4 @@
-package com.ipirangad3v.rockpaperscissors.data.entitities
+package com.ipirangad3v.rockpaperscissors.data.remote.entitities
 
 data class GameResponse(
     val cpu: String,

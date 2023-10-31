@@ -1,7 +1,7 @@
 package com.ipirangad3v.rockpaperscissors.domain.repository
 
-import com.ipirangad3v.rockpaperscissors.data.entitities.GameResponse
-import com.ipirangad3v.rockpaperscissors.data.entitities.NameResponse
+import com.ipirangad3v.rockpaperscissors.data.remote.entitities.GameResponse
+import com.ipirangad3v.rockpaperscissors.data.remote.entitities.NameResponse
 import com.ipirangad3v.rockpaperscissors.data.remote.RockPaperScissorsService
 import com.ipirangad3v.rockpaperscissors.domain.models.Resource
 import com.ipirangad3v.rockpaperscissors.domain.platform.NetworkHandler

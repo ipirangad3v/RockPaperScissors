@@ -1,7 +1,7 @@
 package com.ipirangad3v.rockpaperscissors.data.remote
 
-import com.ipirangad3v.rockpaperscissors.data.entitities.GameResponse
-import com.ipirangad3v.rockpaperscissors.data.entitities.NameResponse
+import com.ipirangad3v.rockpaperscissors.data.remote.entitities.GameResponse
+import com.ipirangad3v.rockpaperscissors.data.remote.entitities.NameResponse
 import retrofit2.Call
 import retrofit2.http.GET
 
