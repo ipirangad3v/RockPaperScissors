@@ -34,7 +34,6 @@ fun WelcomeScreen(
 
     val gameLogo by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.rock_paper_scissors))
     val ranking by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.ranking))
-    val startButton by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.start_button))
 
 
     val screenState by welcomeViewModel.screenState.collectAsState(WelcomeScreenState())
