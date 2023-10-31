@@ -21,7 +21,7 @@ abstract class RankingDatabase : RoomDatabase() {
     abstract fun rankingDao(): RankingDao
 
     companion object {
-        const val RANKING_DB_VERSION = 1
+        const val RANKING_DB_VERSION = 2
         const val RANKING_DB_NAME = "ranking"
         const val MATCHES_TABLE = "matches"
     }

@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import com.ipirangad3v.rockpaperscissors.R
 
 @Composable
-fun Loading() {
+fun Loading(text: String = stringResource(id = R.string.finding_opponent)) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
@@ -30,7 +30,7 @@ fun Loading() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text(text = stringResource(id = R.string.finding_opponent))
+            Text(text = text)
             Spacer(modifier = Modifier.size(16.dp))
             CircularProgressIndicator()
         }

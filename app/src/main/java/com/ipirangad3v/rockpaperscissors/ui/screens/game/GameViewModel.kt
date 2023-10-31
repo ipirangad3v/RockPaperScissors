@@ -97,6 +97,7 @@ class GameViewModel @Inject constructor(
                 cpu = _screenState.value.currentFoeName,
                 player = _screenState.value.currentUserName,
                 winner = _screenState.value.finalResult!!,
+                matches = _screenState.value.rounds.size
             )
         )
     }

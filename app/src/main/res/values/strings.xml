@@ -8,4 +8,7 @@
     <string name="round">Rodada</string>
     <string name="final_result">Resultado final</string>
     <string name="play_again">Jogar novamente</string>
+    <string name="loading_ranking">Carregando ranking</string>
+    <string name="no_matches_yet">Sem partidas ainda</string>
+    <string name="back">voltar</string>
 </resources>

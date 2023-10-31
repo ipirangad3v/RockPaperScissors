@@ -25,9 +25,10 @@ import com.ipirangad3v.rockpaperscissors.domain.models.GameState
 import com.ipirangad3v.rockpaperscissors.domain.models.Movement
 import com.ipirangad3v.rockpaperscissors.ui.components.ErrorScreen
 import com.ipirangad3v.rockpaperscissors.ui.components.Loading
+import com.ipirangad3v.rockpaperscissors.ui.screens.ranking.BackButton
 
 @Composable
-fun GameScreen(gameViewModel: GameViewModel) {
+fun GameScreen(gameViewModel: GameViewModel, onBackClicked: () -> Unit) {
 
     val screenState by gameViewModel.screenState.collectAsState(GameScreenState())
 
@@ -38,10 +39,15 @@ fun GameScreen(gameViewModel: GameViewModel) {
 
         } else {
             Column(
-                Modifier.fillMaxWidth(),
+                Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
+                BackButton {
+                    onBackClicked()
+                }
                 if (screenState.error) {
                     ErrorScreen {
                         gameViewModel.getFoeName()

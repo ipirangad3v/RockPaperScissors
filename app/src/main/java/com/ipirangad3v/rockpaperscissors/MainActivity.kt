@@ -44,8 +44,16 @@ class MainActivity : ComponentActivity() {
                                 navController.navigate(GAME_SCREEN)
                             }
                         }
-                        composable(GAME_SCREEN) { GameScreen(hiltViewModel()) }
-                        composable(RANKING_SCREEN) { RankingScreen(hiltViewModel()) }
+                        composable(GAME_SCREEN) {
+                            GameScreen(hiltViewModel()) {
+                                navController.navigateUp()
+                            }
+                        }
+                        composable(RANKING_SCREEN) {
+                            RankingScreen(hiltViewModel()) {
+                                navController.navigateUp()
+                            }
+                        }
                     }
 
                 }
