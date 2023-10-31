@@ -1,10 +1,12 @@
 package com.ipirangad3v.rockpaperscissors.ui.screens.welcome
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults.buttonColors
@@ -56,31 +58,18 @@ fun WelcomeScreen(
             iterations = LottieConstants.IterateForever,
             speed = 0.5f,
         )
-        Button(
-            onClick = onRankingClick,
-            colors = buttonColors(
-                containerColor = Color.Transparent,
-                contentColor = Color.Transparent
-            )
-        ) {
-            LottieAnimation(
-                composition = ranking,
-                iterations = LottieConstants.IterateForever,
-                modifier = Modifier.size(100.dp)
-            )
-        }
-        Button(
-            onClick = onStartGameClick,
-            colors = buttonColors(
-                containerColor = Color.Transparent,
-                contentColor = Color.Transparent
-            )
-        ) {
-            LottieAnimation(
-                composition = startButton,
-                iterations = LottieConstants.IterateForever,
+        LottieAnimation(
+            modifier = Modifier
+                .size(100.dp)
+                .clickable { onRankingClick() },
+            composition = ranking,
+            iterations = LottieConstants.IterateForever,
 
-                )
+            )
+        Button(
+            onClick = { onStartGameClick() },
+        ) {
+            Text(text = stringResource(id = R.string.start_game))
         }
     }
 
