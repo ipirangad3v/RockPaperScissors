@@ -7,17 +7,19 @@ interface Repository {
 
     fun <T, R> request(
         call: Call<T>,
-        transform: (T) -> R,
-    ): Resource<out R> {
+        transform: (T) -> R
+    ): Resource<R> {
         return try {
             val response = call.execute()
-            val either = when (response.isSuccessful) {
-                true  -> Resource.success(transform((response.body()!!)))
-                false -> Resource.error("Server Error", null)
+            if (response.isSuccessful) {
+                val body = response.body()
+                if (body != null) {
+                    return Resource.success(transform(body))
+                }
             }
-            either
+            return Resource.error("Server Error", null)
         } catch (exception: Throwable) {
-            Resource.error(exception.message ?: "Error", null)
+            return Resource.error(exception.message ?: "Error", null)
         }
     }
 }

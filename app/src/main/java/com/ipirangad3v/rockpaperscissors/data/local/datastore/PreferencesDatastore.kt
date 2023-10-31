@@ -24,7 +24,7 @@ class PreferencesDataStore(private val context: Context) {
     suspend fun readUserName(): Resource<String> {
         return Resource.success(
             context.preferencesDataStore.data.map { preferences ->
-                preferences[userName] ?: ""
+                preferences[userName] ?: "Jogador"
             }.first()
         )
     }

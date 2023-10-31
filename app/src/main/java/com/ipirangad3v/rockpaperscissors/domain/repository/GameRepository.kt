@@ -9,8 +9,8 @@ import javax.inject.Inject
 
 interface GameRepository : Repository {
 
-    fun getPlay(): Resource<out GameResponse>
-    fun getName(): Resource<out NameResponse>
+    fun getPlay(): Resource<GameResponse>
+    fun getName(): Resource<NameResponse>
 
     class Impl
     @Inject constructor(
@@ -18,7 +18,7 @@ interface GameRepository : Repository {
         private val service: RockPaperScissorsService,
     ) : GameRepository {
 
-        override fun getPlay(): Resource<out GameResponse> {
+        override fun getPlay(): Resource<GameResponse> {
             return when (networkHandler.isNetworkAvailable()) {
                 true  ->
                     request(
@@ -31,7 +31,7 @@ interface GameRepository : Repository {
             }
         }
 
-        override fun getName(): Resource<out NameResponse> {
+        override fun getName(): Resource<NameResponse> {
             return when (networkHandler.isNetworkAvailable()) {
                 true  ->
                     request(
