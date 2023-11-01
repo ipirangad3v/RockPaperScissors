@@ -117,6 +117,10 @@ fun GameScreen(gameViewModel: GameViewModel, onBackClicked: () -> Unit) {
                             Text(text = stringResource(id = R.string.play_again))
 
                         }
+                        if (screenState.currentGameState != GameState.ENDED) {
+                            gameViewModel.endGame()
+                        }
+
                     }
                 }
             }

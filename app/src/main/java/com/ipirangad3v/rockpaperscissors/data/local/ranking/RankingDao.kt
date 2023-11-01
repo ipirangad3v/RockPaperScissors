@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy.Companion.REPLACE
 import androidx.room.Query
 import com.ipirangad3v.rockpaperscissors.data.local.ranking.entities.MatchEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface RankingDao {
@@ -13,6 +14,6 @@ interface RankingDao {
     fun insertMatch(match: MatchEntity)
 
     @Query("SELECT * FROM matches")
-    fun getAllMatches(): List<MatchEntity>
+    fun getAllMatches(): Flow<List<MatchEntity>>
 
 }

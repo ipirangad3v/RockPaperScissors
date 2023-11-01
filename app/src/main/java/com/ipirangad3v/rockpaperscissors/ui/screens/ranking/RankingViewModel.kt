@@ -1,17 +1,13 @@
 package com.ipirangad3v.rockpaperscissors.ui.screens.ranking
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ipirangad3v.rockpaperscissors.data.local.ranking.RankingDatabase
-import com.ipirangad3v.rockpaperscissors.ui.screens.game.GameScreenState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 @HiltViewModel
 class RankingViewModel @Inject constructor(
@@ -20,6 +16,7 @@ class RankingViewModel @Inject constructor(
 
     private val _screenState = MutableStateFlow(RankingScreenState()) // private mutable state flow
     val screenState = _screenState.asStateFlow() // publi
+
 
     init {
         getAllMatches()
@@ -30,12 +27,13 @@ class RankingViewModel @Inject constructor(
             loading = true
         )
         viewModelScope.launch {
-            withContext(Dispatchers.IO) {
+            rankingDatabase.rankingDao().getAllMatches().collect {
                 _screenState.value = _screenState.value.copy(
                     loading = false,
-                    matches = rankingDatabase.rankingDao().getAllMatches()
+                    matches = it
                 )
             }
+
         }
     }
 

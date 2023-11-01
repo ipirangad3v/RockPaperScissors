@@ -11,6 +11,6 @@ data class MatchEntity(
     val cpu: String,
     val player: String,
     val winner: String,
-    val matches: Int,
+    val rounds: Int,
 )
 

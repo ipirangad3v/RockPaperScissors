@@ -87,19 +87,23 @@ class GameViewModel @Inject constructor(
 
     }
 
-    private fun endGame() {
+    fun endGame() {
         _screenState.value = _screenState.value.copy(
             loading = false,
             currentGameState = GameState.ENDED
         )
-        rankingDatabase.rankingDao().insertMatch(
-            MatchEntity(
-                cpu = _screenState.value.currentFoeName,
-                player = _screenState.value.currentUserName,
-                winner = _screenState.value.finalResult!!,
-                matches = _screenState.value.rounds.size
-            )
-        )
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                rankingDatabase.rankingDao().insertMatch(
+                    MatchEntity(
+                        cpu = _screenState.value.currentFoeName,
+                        player = _screenState.value.currentUserName,
+                        winner = _screenState.value.finalResult!!,
+                        rounds = _screenState.value.rounds.size
+                    )
+                )
+            }
+        }
     }
 
     private fun getUserName() {

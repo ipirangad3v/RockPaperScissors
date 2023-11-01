@@ -11,4 +11,8 @@
     <string name="loading_ranking">Carregando ranking</string>
     <string name="no_matches_yet">Sem partidas ainda</string>
     <string name="back">voltar</string>
+    <string name="ranking">Ranking de partidas</string>
+    <string name="vs">vs</string>
+    <string name="winner">Vencedor</string>
+    <string name="rounds">Rodadas</string>
 </resources>

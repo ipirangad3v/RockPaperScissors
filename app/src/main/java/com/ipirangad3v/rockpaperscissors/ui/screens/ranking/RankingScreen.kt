@@ -4,9 +4,12 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -30,11 +33,11 @@ fun RankingScreen(rankingViewModel: RankingViewModel, onBackClicked: () -> Unit)
     Box(modifier = Modifier.fillMaxSize()) {
         if (screenState.loading) {
             Loading(stringResource(id = R.string.loading_ranking))
-
-
         } else {
             Column(
-                Modifier.fillMaxWidth().padding(16.dp),
+                Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
@@ -60,6 +63,7 @@ fun RankingList(matches: List<MatchEntity>) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
+        Text(text = stringResource(id = R.string.ranking), fontSize = 24.sp)
         matches.forEach { match ->
             MatchItem(match)
         }
@@ -69,13 +73,34 @@ fun RankingList(matches: List<MatchEntity>) {
 
 @Composable
 fun MatchItem(match: MatchEntity) {
-    Column(
-        Modifier.fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(16.dp)
-    ) {
-        Text(text = match.player)
-        Text(text = match.cpu)
+    Column {
+        Row(
+            Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            Text(text = match.player)
+            Text(text = stringResource(id = R.string.vs))
+            Text(text = match.cpu)
+            Spacer(modifier = Modifier.weight(1f))
+            Row {
+                Text(
+                    text = match.winner, color = when (match.winner) {
+                        "Winner" -> androidx.compose.ui.graphics.Color.Green
+                        "Lose"   -> androidx.compose.ui.graphics.Color.Red
+                        else     -> androidx.compose.ui.graphics.Color.Gray
+                    }
+                )
+            }
+
+        }
+        Row {
+            Text(text = stringResource(id = R.string.rounds))
+            Spacer(modifier = Modifier.width(16.dp))
+            Text(text = match.rounds.toString())
+        }
+
+
     }
 
 }
