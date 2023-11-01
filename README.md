@@ -4,7 +4,7 @@ Este é um aplicativo de jogo simples de Pedra, Papel e Tesoura para Android, de
 
 ## Screenshots
 
-<img src=https://github.com/ipirangad3v/RockPaperScissors/blob/master/screenshots/Screenshot_20231031_213916.png height=590/><img src=https://github.com/ipirangad3v/RockPaperScissors/blob/master/screenshots/Screenshot_20231031_213933.png height=590/><img src=https://github.com/ipirangad3v/RockPaperScissors/blob/master/screenshots/Screenshot_20231031_213947.png height=590/>
+<img src=https://github.com/ipirangad3v/RockPaperScissors/blob/master/screenshots/Screenshot_20231031_213916.png height=590/> <img src=https://github.com/ipirangad3v/RockPaperScissors/blob/master/screenshots/Screenshot_20231031_213933.png height=590/> <img src=https://github.com/ipirangad3v/RockPaperScissors/blob/master/screenshots/Screenshot_20231031_213947.png height=590/>
 
 ## Funcionalidades Principais
 
