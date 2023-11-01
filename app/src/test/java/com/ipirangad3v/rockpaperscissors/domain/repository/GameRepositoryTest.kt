@@ -1,4 +1,4 @@
-package com.ipirangad3v.rockpaperscissors.ui.screens.domain.repository
+package com.ipirangad3v.rockpaperscissors.domain.repository
 
 import com.ipirangad3v.rockpaperscissors.data.remote.RockPaperScissorsService
 import com.ipirangad3v.rockpaperscissors.data.remote.entitities.GameResponse
