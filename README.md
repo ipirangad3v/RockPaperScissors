@@ -47,6 +47,8 @@ Este é um aplicativo de jogo simples de Pedra, Papel e Tesoura para Android, de
 
 - **Hilt:** Para gerenciar a injeção de dependência no projeto.
 
+- **Lottie Files:** Usado para animar a interface do jogo e adicionar elementos visuais atraentes.
+
 ## Estrutura do projeto
 - **ui:** Contém a lógica e a interface do usuário do aplicativo.
 
