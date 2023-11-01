@@ -14,7 +14,7 @@ Este é um aplicativo de jogo simples de Pedra, Papel e Tesoura para Android, de
 
 - **Salvar o histórico de jogos:** Os resultados de cada partida são armazenados localmente no banco de dados Room, permitindo que o usuário veja o histórico de jogos.
 
-- **API de Classificação Global:** Os jogadores podem ver como eles se comparam com outros jogadores globalmente usando a funcionalidade Retrofit2 para acessar uma API de classificação global.
+- **API que simula um matchmaking:** Os jogadores podem jogar com uma cpu remotamente usando os recursos do retrofit2 como cliente http.
 
 - **Injeção de Dependência com Hilt:** O projeto faz uso do Hilt para gerenciar a injeção de dependência, garantindo um código limpo e fácil de manter.
 
