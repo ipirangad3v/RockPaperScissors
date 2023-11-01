@@ -86,7 +86,7 @@ fun MatchItem(match: MatchEntity) {
             Row {
                 Text(
                     text = match.winner, color = when (match.winner) {
-                        "Winner" -> androidx.compose.ui.graphics.Color.Green
+                        "Win" -> androidx.compose.ui.graphics.Color.Green
                         "Lose"   -> androidx.compose.ui.graphics.Color.Red
                         else     -> androidx.compose.ui.graphics.Color.Gray
                     }
