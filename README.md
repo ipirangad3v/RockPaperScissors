@@ -4,9 +4,7 @@ Este é um aplicativo de jogo simples de Pedra, Papel e Tesoura para Android, de
 
 ## Screenshots
 
-<img src=https://github.com/ipirangad3v/RockPaperScissors/blob/master/screenshots/Screenshot_20231031_213916.png height=590/>
-<img src=https://github.com/ipirangad3v/RockPaperScissors/blob/master/screenshots/Screenshot_20231031_213933.png height=590/>
-<img src=https://github.com/ipirangad3v/RockPaperScissors/blob/master/screenshots/Screenshot_20231031_213947.png height=590/>
+<img src=https://github.com/ipirangad3v/RockPaperScissors/blob/master/screenshots/Screenshot_20231031_213916.png height=590/><img src=https://github.com/ipirangad3v/RockPaperScissors/blob/master/screenshots/Screenshot_20231031_213933.png height=590/><img src=https://github.com/ipirangad3v/RockPaperScissors/blob/master/screenshots/Screenshot_20231031_213947.png height=590/>
 
 ## Funcionalidades Principais
 
@@ -28,3 +26,35 @@ Este é um aplicativo de jogo simples de Pedra, Papel e Tesoura para Android, de
 
    ```shell
    git clone https://github.com/ipirangad3v/RockPaperScissors.git
+
+2. Abra o projeto no Android Studio.
+
+3. Execute o aplicativo em um emulador ou dispositivo Android.
+
+## Tecnologias e Bibliotecas Utilizadas
+
+- **Coroutines:** Utilizadas para executar tarefas assíncronas de forma concorrente.
+
+- **Jetpack Compose:** Usado para construir a interface do usuário do aplicativo de forma declarativa.
+
+- **Material3:** Adicionado para um design moderno e coerente com os princípios do Material Design.
+
+- **Room Database:** Para armazenar o histórico de jogos localmente.
+
+- **DataStore e Retrofit2:** Utilizados para lidar com a persistência de dados e fazer chamadas de API.
+
+- **Hilt:** Para gerenciar a injeção de dependência no projeto.
+
+## Estrutura do projeto
+- **ui:** Contém a lógica e a interface do usuário do aplicativo.
+
+- **data:** Contém as classes para lidar com a persistência de dados e chamadas de API.
+
+- **di:** Configuração de injeção de dependência usando Hilt.
+- **domain:** Contém a lógica de domínio do aplicativo.
+
+
+
+
+
+
