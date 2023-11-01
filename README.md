@@ -1,6 +1,6 @@
 # Pedra, Papel e Tesoura
 
-Este é um aplicativo de jogo simples de Pedra, Papel e Tesoura para Android, desenvolvido utilizando as mais recentes tecnologias do Android, incluindo Coroutines, Jetpack Compose, Material3, Room Database, DataStore, Retrofit2 e Hilt.
+Este é um aplicativo de jogo simples de Pedra, Papel e Tesoura para Android, desenvolvido utilizando as mais recentes tecnologias do Android, incluindo Coroutines, Jetpack Compose, Material3, Room Database, DataStore, Retrofit2, Flow e Hilt.
 
 ## Screenshots
 
@@ -34,7 +34,9 @@ Este é um aplicativo de jogo simples de Pedra, Papel e Tesoura para Android, de
 ## Tecnologias e Bibliotecas Utilizadas
 
 - **Coroutines:** Utilizadas para executar tarefas assíncronas de forma concorrente.
-
+  
+- **Flow:** Utilizado para lidar com stream de dados assíncronos de forma reativa.
+    
 - **Jetpack Compose:** Usado para construir a interface do usuário do aplicativo de forma declarativa.
 
 - **Material3:** Adicionado para um design moderno e coerente com os princípios do Material Design.
